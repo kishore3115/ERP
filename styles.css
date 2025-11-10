@@ -1,0 +1,67 @@
+/* Basic responsive layout */
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a4;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI, Roboto, system-ui, -apple-system, 'Helvetica Neue', Arial;background:var(--bg);color:#111}
+.topbar{background:var(--card);border-bottom:1px solid #e6e9ee}
+.topbar-inner{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:18px;margin:0;color:var(--accent)}
+.top-actions input{padding:8px 10px;border-radius:6px;border:1px solid #d1d5db;background:#fff;width:240px}
+.app{display:flex;max-width:1100px;margin:20px auto;padding:0 16px;gap:20px}
+.sidebar{width:260px;background:transparent}
+.sidebar .menu{list-style:none;padding:8px;margin:0;border-radius:8px}
+.sidebar .menu-item{display:block;padding:10px 12px;margin:6px 0;border-radius:6px;color:#0f172a;text-decoration:none;border:1px solid transparent}
+.sidebar .menu-item:hover{background:#fff;border-color:#e6e9ee}
+.sidebar .menu-item.active{background:linear-gradient(90deg,#ecfeff,#f0f9ff);border:1px solid #c6f6f4}
+.main{flex:1;min-height:60vh}
+.card{background:var(--card);padding:16px;border-radius:8px;box-shadow:0 1px 2px rgba(16,24,40,0.03);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+
+/* Home module small cards */
+.home-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:12px}
+.home-card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 4px 12px rgba(16,24,40,0.04);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.home-left{display:flex;align-items:center;gap:12px}
+.home-icon{width:48px;height:48px;border-radius:50%;background:#e9f5ff;display:flex;align-items:center;justify-content:center;font-size:20px;color:#0b66c3}
+.home-title{font-size:14px;color:#274059}
+.home-badge{background:#ffde6a;padding:6px 8px;border-radius:8px;font-weight:600;color:#1f1f1f}
+
+@media (max-width:600px){
+  .home-grid{grid-template-columns:1fr}
+}
+
+/* Attendance form styles */
+.attendance-form{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap}
+.attendance-form .form-row{display:flex;flex-direction:column;min-width:220px}
+.attendance-form label{font-size:14px;color:#334155;margin-bottom:6px}
+.attendance-form select{padding:10px 12px;border-radius:8px;border:1px solid #d1d5db;background:#fff;min-width:220px}
+.form-actions{display:flex;gap:10px}
+.form-actions .btn{padding:10px 14px;border-radius:8px}
+.module-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.module-header h2{margin:0}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:8px;border-bottom:1px solid #eef2f7;text-align:left}
+.footer{text-align:center;padding:12px;color:var(--muted);font-size:13px}
+@media (max-width:800px){
+  .app{flex-direction:column;padding:0 12px}
+  .sidebar{width:100%}
+  .top-actions input{width:140px}
+}
+
+/* Login page */
+.login-page{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(2,6,23,0.02),rgba(255,255,255,0.6));z-index:60}
+.login-card{width:420px;max-width:94%;background:var(--card);padding:18px;border-radius:10px;box-shadow:0 8px 24px rgba(16,24,40,0.08)}
+.login-card label{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+.login-card input{width:100%;padding:12px 14px;margin-top:8px;border-radius:28px;border:1px solid #cbd5e1;font-size:15px}
+.login-actions{margin-top:12px;display:flex;gap:8px}
+.btn{padding:10px 16px;border-radius:10px;border:1px solid transparent;background:#fff;cursor:pointer}
+.btn.primary{background:#0b66c3;color:#fff;border-color:transparent;box-shadow:0 4px 10px rgba(11,102,195,0.12)}
+.muted{color:var(--muted);font-size:13px;margin-top:8px}
+.lost{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:underline;background:transparent;padding:0;border-radius:0;font-weight:600}
+.hidden{display:none !important}
+.login-logo{display:flex;justify-content:center;margin-bottom:12px}
+.login-logo img{max-width:240px;height:auto;display:block}
+.login-logo svg{width:220px;height:120px}

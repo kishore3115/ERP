@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ERP Portal — Frontend</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1 class="brand">ERP Portal</h1>
+      <div class="top-actions">
+        <div id="user-area" class="user-area" style="display:none">
+          <span id="user-name" style="margin-right:8px;color:var(--muted)"></span>
+          <button id="logout-btn" class="btn">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth / Login page shown when not authenticated -->
+  <div id="login-page" class="login-page" aria-hidden="true">
+    <div class="login-card">
+      <div class="login-logo" aria-hidden="true">
+  <!-- Primary logo: use the provided absolute path on your machine. -->
+  <img id="login-img" src="C:\Users\DELL\Downloads\ERP\vignans.png" alt="vignans logo" />
+        <!-- Fallback inline SVG shown only if external image fails to load -->
+        <svg id="login-svg" width="220" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo" style="display:none">
+          <circle cx="40" cy="30" r="24" fill="#7b1414" stroke="#7b1414" stroke-width="2" />
+          <text x="98" y="92" font-family="Georgia, serif" font-size="34" fill="#7b1414" text-anchor="middle" font-weight="700">VIT</text>
+        </svg>
+        <script>
+          // If external image fails to load, show inline SVG fallback.
+          const img = document.getElementById('login-img');
+          img.addEventListener('error', ()=>{
+            img.style.display = 'none';
+            document.getElementById('login-svg').style.display = 'block';
+          });
+        </script>
+      </div>
+
+      <form id="login-form">
+        <input id="username" name="username" placeholder="Username" autocomplete="username" required />
+        <input id="password" name="password" type="password" placeholder="Password" autocomplete="current-password" required />
+        <div class="login-actions">
+          <button type="submit" class="btn primary">Log in</button>
+        </div>
+  <a href="#" class="lost">Lost password?</a>
+      </form>
+    </div>
+  </div>
+
+  <div class="app">
+    <aside id="sidebar" class="sidebar" aria-label="Main navigation"></aside>
+    <main id="main" class="main" tabindex="0"></main>
+  </div>
+
+  <footer class="footer">ERP Frontend Prototype — static demo</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
