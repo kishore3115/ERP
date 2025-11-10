@@ -26,3 +26,4 @@ Notes
 - This is intentionally minimal so you can review structure and extend module UIs.
 - I can convert this to a React + Vite starter or add sample backend mocks if you want — tell me which.
 - I added a simple login flow that gates the app; tell me if you want real authentication, role-based access, or a server-backed session.
+"# ERP" 
